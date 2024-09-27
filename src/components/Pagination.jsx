@@ -6,7 +6,7 @@ const Pagination = ({ currentPage, totalTasks, tasksPerPage, paginate }) => {
   return (
     <div className="pagination-controls">
       <div className="bottomLeft">
-        <button>{totalPages || 1}</button>
+        <button>Total Pages: {totalPages || 1}</button>
       </div>
       <div className="bottomRight">
         <button onClick={() => paginate(1)} disabled={currentPage === 1}>

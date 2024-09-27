@@ -68,6 +68,7 @@ const TodoPage = () => {
 
   return (
     <div className="todo-page">
+      <h1><span>To-Do List</span> Application</h1>
       <div className="todo-controls">
         <div className="leftNav">
           <div className="flex">
