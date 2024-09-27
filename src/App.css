@@ -201,7 +201,7 @@ body {
 .form-row label {
   display: block;
 }
-.form-row span{
+.task-form-modal span{
   color: red;
 }
 .form-row input,

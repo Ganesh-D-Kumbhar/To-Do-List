@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import ConfirmDialog from './ConfirmDialogue'; // Adjust the import path as needed
+import ConfirmDialog from './ConfirmDialogue'; 
 
 const TaskList = ({ tasks, searchQuery, onEditTask, onDeleteTask }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
 
   const filteredTasks = tasks.filter(task => {
-    const query = searchQuery.toLowerCase(); // Normalize search query for case-insensitivity
+    const query = searchQuery.toLowerCase(); 
     return (
       task.assignedTo?.toLowerCase().includes(query) || // Check 'assignedTo'
       task.status?.toLowerCase().includes(query) || // Check 'status'
@@ -59,7 +59,7 @@ const TaskList = ({ tasks, searchQuery, onEditTask, onDeleteTask }) => {
                     } else if (action === 'delete') {
                       handleDeleteClick(task);
                     }
-                    e.target.value = ''; // Reset the dropdown after selection
+                    e.target.value = ''; 
                   }}>
                     <option value="">Select action</option>
                     <option value="edit">Edit</option>

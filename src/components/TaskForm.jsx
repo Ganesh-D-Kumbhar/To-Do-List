@@ -11,7 +11,7 @@ const TaskForm = ({ selectedTask, onSubmit, onClose }) => {
 
   useEffect(() => {
     if (selectedTask) {
-      setTask(selectedTask);  // Populate form when editing
+      setTask(selectedTask);  
     } else {
       setTask({
         assignedTo: "",
@@ -34,7 +34,7 @@ const TaskForm = ({ selectedTask, onSubmit, onClose }) => {
       alert("Please fill in all required fields.");
       return;
     }
-    onSubmit(task);  // Submit task back to TodoPage
+    onSubmit(task); 
   };
 
   return (
@@ -86,11 +86,12 @@ const TaskForm = ({ selectedTask, onSubmit, onClose }) => {
             </label>
             <select name="priority" value={task.priority} onChange={handleChange}>
               <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
+              <option value="Medium">Normal</option>
               <option value="High">High</option>
             </select>
           </div>
         </div>
+        <label htmlFor=""><span>*</span>Description</label>
         <textarea
           name="description"
           value={task.description}

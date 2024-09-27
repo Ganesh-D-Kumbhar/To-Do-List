@@ -11,8 +11,7 @@ const SearchBar = ({ onSearch }) => {
   // Handle the search action when the user submits the form
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch(searchQuery); // Pass the search query to the parent component
-    // Clear the search query after submission
+    onSearch(searchQuery); 
     setSearchQuery("");
   };
 
