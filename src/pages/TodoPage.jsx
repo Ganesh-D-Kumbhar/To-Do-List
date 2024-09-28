@@ -7,6 +7,7 @@ import Pagination from "../components/Pagination";
 const TodoPage = () => {
   const [tasks, setTasks] = useState([
     {
+      id: 1,
       assignedTo: "Ganesh Kumbhar",
       status: "Pending",
       dueDate: "2024-03-01",
@@ -14,6 +15,7 @@ const TodoPage = () => {
       description: "Implement new feature",
     },
     {
+      id: 2,  
       assignedTo: "Suraj Lamkane",
       status: "Pending",
       dueDate: "2024-06-01",
@@ -21,14 +23,15 @@ const TodoPage = () => {
       description: "Implement new feature",
     },
     {
+      id: 3, 
       assignedTo: "Onkar Dingane",
       status: "Pending",
       dueDate: "2024-01-06",
       priority: "High",
       description: "Implement new feature",
     },
-
   ]);
+
   const [selectedTask, setSelectedTask] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -59,9 +62,9 @@ const TodoPage = () => {
   };
 
   const handleDeleteTask = (id) => {
-      const updatedTasks = tasks.filter((task) => task.id !== id);
-      setTasks(updatedTasks);
-    
+    // Correctly filter out the task with the matching id
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
   };
 
   const handleFormClose = () => {
@@ -117,7 +120,7 @@ const TodoPage = () => {
         tasks={currentTasks}
         searchQuery={searchQuery}
         onEditTask={handleEditTask}
-        onDeleteTask={handleDeleteTask}
+        onDeleteTask={handleDeleteTask}  // Correct delete function
       />
 
       {showForm && (

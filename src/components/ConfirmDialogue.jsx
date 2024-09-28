@@ -8,7 +8,7 @@ const ConfirmDialog = ({ isOpen, onClose, onConfirm, task }) => {
       <div className="confirm-dialog">
         <div className="confirm-dialog-header">
           <h3>Delete</h3>
-          <h2>X</h2>
+          <h2 onClick={onClose}>x</h2>
         </div>
         <div className="confirm-dialog-body">
           <p>Do you want to delete the task assigned to <strong>{task.assignedTo}</strong>?</p>
