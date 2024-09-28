@@ -6,7 +6,28 @@ import Pagination from "../components/Pagination";
 
 const TodoPage = () => {
   const [tasks, setTasks] = useState([
-    // Existing tasks
+    {
+      assignedTo: "Ganesh Kumbhar",
+      status: "Pending",
+      dueDate: "2024-03-01",
+      priority: "High",
+      description: "Implement new feature",
+    },
+    {
+      assignedTo: "Suraj Lamkane",
+      status: "Pending",
+      dueDate: "2024-06-01",
+      priority: "High",
+      description: "Implement new feature",
+    },
+    {
+      assignedTo: "Onkar Dingane",
+      status: "Pending",
+      dueDate: "2024-01-06",
+      priority: "High",
+      description: "Implement new feature",
+    },
+
   ]);
   const [selectedTask, setSelectedTask] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -34,7 +55,7 @@ const TodoPage = () => {
       const newTask = { ...task, id: Date.now() };
       setTasks([...tasks, newTask]);
     }
-    setShowForm(false);  // Close the form after submission
+    setShowForm(false);  
   };
 
   const handleDeleteTask = (id) => {
@@ -86,7 +107,7 @@ const TodoPage = () => {
         <div className="rightNav">
           <div>
             <button onClick={handleAddNewTask}>New Task</button>
-            <button onClick={handleRefresh}>Refresh</button> {/* Updated refresh button */}
+            <button onClick={handleRefresh}>Refresh</button> 
           </div>
           <SearchBar onSearch={handleSearch} />
         </div>
